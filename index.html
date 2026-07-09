@@ -1,171 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
+
+<!-- Google tag -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-W455WXJL81"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-W455WXJL81');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-W455WXJL81');
 </script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Gavin Tarver | Mechanical Engineering</title>
 
 <style>
+*{box-sizing:border-box;scroll-behavior:smooth}
 body{
-    margin:0;
-    font-family:Arial,Helvetica,sans-serif;
-    background:#0b1020;
-    color:white;
-    line-height:1.6;
+  margin:0;
+  font-family:Inter,Arial,sans-serif;
+  background:#050816;
+  color:#fff;
 }
-
-header{
-    padding:80px 20px;
-    text-align:center;
-    background:linear-gradient(135deg,#111827,#1e3a8a);
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(59,130,246,.25),transparent 30%),
+    radial-gradient(circle at 80% 10%,rgba(255,255,255,.12),transparent 25%),
+    radial-gradient(circle at 50% 90%,rgba(37,99,235,.2),transparent 30%);
+  z-index:-2;
 }
-
-h1{
-    font-size:52px;
-    margin-bottom:10px;
+.stars{
+  position:fixed;
+  inset:0;
+  background-image:radial-gradient(white 1px, transparent 1px);
+  background-size:55px 55px;
+  opacity:.13;
+  z-index:-1;
 }
-
-h2{
-    color:#60a5fa;
+nav{
+  position:sticky;
+  top:0;
+  backdrop-filter:blur(14px);
+  background:rgba(5,8,22,.75);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  padding:18px 8%;
+  display:flex;
+  justify-content:space-between;
+  z-index:10;
 }
-
-.container{
-    max-width:1000px;
-    margin:auto;
-    padding:40px 20px;
+nav a{
+  color:#cbd5e1;
+  text-decoration:none;
+  margin-left:24px;
 }
-
+nav a:hover{color:white}
+.hero{
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:80px 8%;
+}
+.hero h1{
+  font-size:clamp(48px,8vw,96px);
+  margin:0;
+  letter-spacing:-3px;
+}
+.hero h2{
+  color:#60a5fa;
+  font-size:clamp(22px,4vw,42px);
+}
+.hero p{
+  max-width:760px;
+  margin:20px auto;
+  color:#cbd5e1;
+  font-size:20px;
+}
+.btn{
+  display:inline-block;
+  margin:12px;
+  padding:15px 28px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:bold;
+}
+.primary{background:#fff;color:#050816}
+.secondary{border:1px solid rgba(255,255,255,.3);color:white}
+section{
+  padding:80px 8%;
+  max-width:1200px;
+  margin:auto;
+}
+.section-title{
+  font-size:42px;
+  margin-bottom:25px;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:24px;
+}
 .card{
-    background:#161b22;
-    padding:25px;
-    border-radius:12px;
-    margin-bottom:25px;
+  background:rgba(15,23,42,.78);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:22px;
+  padding:28px;
+  box-shadow:0 20px 50px rgba(0,0,0,.25);
 }
-
-.button{
-    display:inline-block;
-    padding:14px 28px;
-    background:#2563eb;
-    color:white;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
+.card h3{color:#93c5fd}
+.card p,.card li{color:#d1d5db}
+.badge{
+  display:inline-block;
+  padding:8px 13px;
+  border-radius:999px;
+  background:rgba(96,165,250,.14);
+  color:#bfdbfe;
+  margin:6px;
 }
-
-.button:hover{
-    background:#3b82f6;
-}
-
 footer{
-    text-align:center;
-    padding:40px;
-    color:#aaa;
+  text-align:center;
+  padding:40px;
+  color:#94a3b8;
+  border-top:1px solid rgba(255,255,255,.08);
 }
 </style>
-
 </head>
 
 <body>
+<div class="stars"></div>
 
-<header>
+<nav>
+  <strong>Gavin Tarver</strong>
+  <div>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-<h1>Gavin Tarver</h1>
-
-<h2>Mechanical Engineering Student</h2>
-
-<p>Louisiana State University • Aerospace Engineering Minor</p>
-
-<br>
-
-<a class="button" href="Resume.pdf" target="_blank">Download Resume</a>
-
-</header>
-
-<div class="container">
-
-<div class="card">
-
-<h2>About Me</h2>
-
-<p>
-I'm a Mechanical Engineering student at Louisiana State University with a passion for aerospace engineering, robotics, manufacturing, and solving difficult engineering problems.
-My goal is to contribute to the future of space exploration through innovative engineering and continuous learning.
-</p>
-
+<div class="hero">
+  <div>
+    <h1>Gavin Tarver</h1>
+    <h2>Mechanical Engineering Student</h2>
+    <p>
+      Louisiana State University student pursuing Mechanical Engineering with an Aerospace Engineering minor.
+      Interested in aerospace, robotics, manufacturing, and building systems that push the future forward.
+    </p>
+    <a class="btn primary" href="Resume.pdf" target="_blank">Download Resume</a>
+    <a class="btn secondary" href="mailto:gtarve2@lsu.edu">Contact Me</a>
+  </div>
 </div>
 
-<div class="card">
+<section id="about">
+  <h2 class="section-title">About Me</h2>
+  <div class="card">
+    <p>
+      I am a Mechanical Engineering student at LSU with a long-standing interest in aerospace engineering,
+      robotics, and hands-on manufacturing. Through FIRST Robotics, metal fabrication experience, and engineering coursework,
+      I have developed a strong interest in solving difficult technical problems and learning from real engineering teams.
+    </p>
+  </div>
+</section>
 
-<h2>Experience</h2>
+<section id="experience">
+  <h2 class="section-title">Experience</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>FIRST Robotics Captain</h3>
+      <p>Led robot design, team strategy, troubleshooting, coding, CAD, and competition preparation.</p>
+    </div>
+    <div class="card">
+      <h3>Iron Core Strength Intern</h3>
+      <p>Gained hands-on experience with welding, metal cutting, milling, fabrication, and shop safety.</p>
+    </div>
+    <div class="card">
+      <h3>Merrill Lynch Intern</h3>
+      <p>Shadowed professionals and learned client communication, business operations, and networking.</p>
+    </div>
+    <div class="card">
+      <h3>Ruffino’s Restaurant</h3>
+      <p>Developed work ethic, reliability, customer service, and teamwork in a fast-paced environment.</p>
+    </div>
+  </div>
+</section>
 
-<ul>
+<section id="projects">
+  <h2 class="section-title">Engineering Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Robotics Systems</h3>
+      <p>Mechanical, electrical, and programming work through FTC and FRC robotics competitions.</p>
+    </div>
+    <div class="card">
+      <h3>Metal Fabrication</h3>
+      <p>Hands-on manufacturing experience involving welding, cutting, milling, and structural components.</p>
+    </div>
+    <div class="card">
+      <h3>Future Aerospace Projects</h3>
+      <p>This section will grow with LSU engineering projects, CAD work, and aerospace-related builds.</p>
+    </div>
+  </div>
+</section>
 
-<li>FIRST Robotics Team Captain</li>
+<section>
+  <h2 class="section-title">Skills</h2>
+  <div>
+    <span class="badge">Python</span>
+    <span class="badge">Robotics</span>
+    <span class="badge">CAD</span>
+    <span class="badge">Welding</span>
+    <span class="badge">Milling</span>
+    <span class="badge">Metal Fabrication</span>
+    <span class="badge">Problem Solving</span>
+    <span class="badge">Team Leadership</span>
+  </div>
+</section>
 
-<li>Mechanical Engineering Student at LSU</li>
-
-<li>Intern – Merrill Lynch</li>
-
-<li>Intern – Iron Core Strength (Metal Fabrication)</li>
-
-<li>Ruffino's Italian Restaurant</li>
-
-</ul>
-
-</div>
-
-<div class="card">
-
-<h2>Skills</h2>
-
-<ul>
-
-<li>Python</li>
-
-<li>Robotics</li>
-
-<li>Metal Fabrication</li>
-
-<li>Welding</li>
-
-<li>Machining</li>
-
-<li>Problem Solving</li>
-
-</ul>
-
-</div>
-
-<div class="card">
-
-<h2>Contact</h2>
-
-<p>
-
-Email:<br>
-
-gtarve2@lsu.edu
-
-</p>
-
-</div>
-
-</div>
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+  <div class="card">
+    <p>Email: <a style="color:#93c5fd" href="mailto:gtarve2@lsu.edu">gtarve2@lsu.edu</a></p>
+    <p>Resume: <a style="color:#93c5fd" href="Resume.pdf" target="_blank">View PDF</a></p>
+    <p>Website: gavintarver.github.io</p>
+  </div>
+</section>
 
 <footer>
-
-© 2026 Gavin Tarver
-
+  © 2026 Gavin Tarver • Built for aerospace, robotics, and engineering opportunities.
 </footer>
 
 </body>
