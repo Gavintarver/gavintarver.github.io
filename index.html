@@ -19,18 +19,18 @@ gtag('config', 'G-W455WXJL81');
 *{box-sizing:border-box;scroll-behavior:smooth}
 body{
   margin:0;
-  font-family:Inter,Arial,sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
   background:#050816;
-  color:#fff;
+  color:white;
 }
 body:before{
   content:"";
   position:fixed;
   inset:0;
   background:
-    radial-gradient(circle at 20% 20%,rgba(59,130,246,.25),transparent 30%),
-    radial-gradient(circle at 80% 10%,rgba(255,255,255,.12),transparent 25%),
-    radial-gradient(circle at 50% 90%,rgba(37,99,235,.2),transparent 30%);
+    radial-gradient(circle at 20% 15%,rgba(59,130,246,.22),transparent 30%),
+    radial-gradient(circle at 80% 20%,rgba(255,255,255,.08),transparent 25%),
+    radial-gradient(circle at 50% 90%,rgba(37,99,235,.18),transparent 35%);
   z-index:-2;
 }
 .stars{
@@ -38,59 +38,76 @@ body:before{
   inset:0;
   background-image:radial-gradient(white 1px, transparent 1px);
   background-size:55px 55px;
-  opacity:.13;
+  opacity:.12;
   z-index:-1;
 }
 nav{
   position:sticky;
   top:0;
-  backdrop-filter:blur(14px);
-  background:rgba(5,8,22,.75);
-  border-bottom:1px solid rgba(255,255,255,.08);
-  padding:18px 8%;
+  z-index:10;
   display:flex;
   justify-content:space-between;
-  z-index:10;
+  align-items:center;
+  padding:18px 8%;
+  background:rgba(5,8,22,.78);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
+nav strong{font-size:22px}
 nav a{
   color:#cbd5e1;
   text-decoration:none;
-  margin-left:24px;
+  margin-left:22px;
+  font-size:16px;
 }
 nav a:hover{color:white}
 .hero{
   min-height:90vh;
-  display:flex;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:50px;
   align-items:center;
-  justify-content:center;
-  text-align:center;
   padding:80px 8%;
 }
 .hero h1{
-  font-size:clamp(48px,8vw,96px);
+  font-size:clamp(52px,8vw,92px);
   margin:0;
   letter-spacing:-3px;
 }
 .hero h2{
   color:#60a5fa;
-  font-size:clamp(22px,4vw,42px);
+  font-size:clamp(24px,4vw,40px);
+  margin:15px 0;
 }
 .hero p{
-  max-width:760px;
-  margin:20px auto;
-  color:#cbd5e1;
+  color:#d1d5db;
   font-size:20px;
+  line-height:1.6;
+  max-width:720px;
+}
+.hero-photo{
+  width:100%;
+  max-width:380px;
+  margin:auto;
+  border-radius:32px;
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 30px 80px rgba(0,0,0,.45);
+  overflow:hidden;
+}
+.hero-photo img{
+  width:100%;
+  display:block;
 }
 .btn{
   display:inline-block;
-  margin:12px;
+  margin:12px 12px 12px 0;
   padding:15px 28px;
   border-radius:999px;
   text-decoration:none;
   font-weight:bold;
 }
-.primary{background:#fff;color:#050816}
-.secondary{border:1px solid rgba(255,255,255,.3);color:white}
+.primary{background:white;color:#050816}
+.secondary{border:1px solid rgba(255,255,255,.35);color:white}
 section{
   padding:80px 8%;
   max-width:1200px;
@@ -100,20 +117,28 @@ section{
   font-size:42px;
   margin-bottom:25px;
 }
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:24px;
-}
 .card{
   background:rgba(15,23,42,.78);
   border:1px solid rgba(255,255,255,.1);
-  border-radius:22px;
+  border-radius:24px;
   padding:28px;
   box-shadow:0 20px 50px rgba(0,0,0,.25);
 }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+}
 .card h3{color:#93c5fd}
-.card p,.card li{color:#d1d5db}
+.card p,.card li{color:#d1d5db;line-height:1.6}
+.project-img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  border-radius:18px;
+  margin-bottom:18px;
+  border:1px solid rgba(255,255,255,.1);
+}
 .badge{
   display:inline-block;
   padding:8px 13px;
@@ -128,6 +153,19 @@ footer{
   color:#94a3b8;
   border-top:1px solid rgba(255,255,255,.08);
 }
+@media(max-width:850px){
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  nav{
+    flex-direction:column;
+    gap:12px;
+  }
+  nav a{
+    margin:0 8px;
+  }
+}
 </style>
 </head>
 
@@ -138,8 +176,8 @@ footer{
   <strong>Gavin Tarver</strong>
   <div>
     <a href="#about">About</a>
-    <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
+    <a href="#robotics">Robotics</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
@@ -149,11 +187,15 @@ footer{
     <h1>Gavin Tarver</h1>
     <h2>Mechanical Engineering Student</h2>
     <p>
-      Louisiana State University student pursuing Mechanical Engineering with an Aerospace Engineering minor.
-      Interested in aerospace, robotics, manufacturing, and building systems that push the future forward.
+      LSU Mechanical Engineering student with an Aerospace Engineering minor.
+      Interested in aerospace, robotics, CAD design, manufacturing, and building systems that push the future forward.
     </p>
     <a class="btn primary" href="Resume.pdf" target="_blank">Download Resume</a>
     <a class="btn secondary" href="mailto:gtarve2@lsu.edu">Contact Me</a>
+  </div>
+
+  <div class="hero-photo">
+    <img src="website_photo_me.jpeg" alt="Gavin Tarver professional photo">
   </div>
 </div>
 
@@ -161,49 +203,91 @@ footer{
   <h2 class="section-title">About Me</h2>
   <div class="card">
     <p>
-      I am a Mechanical Engineering student at LSU with a long-standing interest in aerospace engineering,
-      robotics, and hands-on manufacturing. Through FIRST Robotics, metal fabrication experience, and engineering coursework,
-      I have developed a strong interest in solving difficult technical problems and learning from real engineering teams.
+      I am a Mechanical Engineering student at Louisiana State University pursuing an Aerospace Engineering minor.
+      My background includes FIRST Robotics leadership, CAD design, hands-on fabrication, and engineering coursework.
+      My goal is to keep developing as an engineer and contribute to aerospace systems, robotics, and advanced manufacturing.
     </p>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="section-title">Featured Engineering Work</h2>
+
+  <div class="grid">
+    <div class="card">
+      <img class="project-img" src="Motor.pdf" alt="Jigsaw motor CAD drawing">
+      <h3>Jigsaw Motor CAD Drawing</h3>
+      <p>
+        Technical drawing of a jigsaw motor assembly with multiple engineering views and a professional title block.
+      </p>
+      <a class="btn secondary" href="Motor.pdf" target="_blank">View Drawing</a>
+    </div>
+
+    <div class="card">
+      <h3>Skills Demonstrated</h3>
+      <p>
+        CAD modeling, technical drawing, engineering documentation, mechanical design, and visual communication.
+      </p>
+      <span class="badge">CAD</span>
+      <span class="badge">Mechanical Design</span>
+      <span class="badge">Technical Drawing</span>
+    </div>
+  </div>
+</section>
+
+<section id="robotics">
+  <h2 class="section-title">FIRST Robotics</h2>
+
+  <div class="grid">
+    <div class="card">
+      <img class="project-img" src="Robotics_photo1.jpeg" alt="Robotics build work">
+      <h3>Robot Build & Integration</h3>
+      <p>
+        Hands-on assembly, troubleshooting, and subsystem integration during robotics build season.
+      </p>
+    </div>
+
+    <div class="card">
+      <img class="project-img" src="Robotics_photo2.jpeg" alt="Robotics competition field">
+      <h3>Competition Experience</h3>
+      <p>
+        Supporting robot operations and team strategy during robotics competition events.
+      </p>
+    </div>
+
+    <div class="card">
+      <img class="project-img" src="Robotics_photo3.jpeg" alt="FTC robot preparation">
+      <h3>Team Leadership</h3>
+      <p>
+        Preparing, troubleshooting, and supporting the team before competition matches.
+      </p>
+    </div>
   </div>
 </section>
 
 <section id="experience">
   <h2 class="section-title">Experience</h2>
+
   <div class="grid">
     <div class="card">
       <h3>FIRST Robotics Captain</h3>
-      <p>Led robot design, team strategy, troubleshooting, coding, CAD, and competition preparation.</p>
+      <p>
+        Led robot design, team strategy, troubleshooting, CAD, coding, and competition preparation.
+      </p>
     </div>
+
     <div class="card">
       <h3>Iron Core Strength Intern</h3>
-      <p>Gained hands-on experience with welding, metal cutting, milling, fabrication, and shop safety.</p>
+      <p>
+        Gained hands-on experience with welding, metal cutting, milling, fabrication, and shop safety.
+      </p>
     </div>
+
     <div class="card">
       <h3>Merrill Lynch Intern</h3>
-      <p>Shadowed professionals and learned client communication, business operations, and networking.</p>
-    </div>
-    <div class="card">
-      <h3>Ruffino’s Restaurant</h3>
-      <p>Developed work ethic, reliability, customer service, and teamwork in a fast-paced environment.</p>
-    </div>
-  </div>
-</section>
-
-<section id="projects">
-  <h2 class="section-title">Engineering Projects</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Robotics Systems</h3>
-      <p>Mechanical, electrical, and programming work through FTC and FRC robotics competitions.</p>
-    </div>
-    <div class="card">
-      <h3>Metal Fabrication</h3>
-      <p>Hands-on manufacturing experience involving welding, cutting, milling, and structural components.</p>
-    </div>
-    <div class="card">
-      <h3>Future Aerospace Projects</h3>
-      <p>This section will grow with LSU engineering projects, CAD work, and aerospace-related builds.</p>
+      <p>
+        Shadowed professionals and learned client communication, business operations, and professional networking.
+      </p>
     </div>
   </div>
 </section>
@@ -217,13 +301,14 @@ footer{
     <span class="badge">Welding</span>
     <span class="badge">Milling</span>
     <span class="badge">Metal Fabrication</span>
-    <span class="badge">Problem Solving</span>
+    <span class="badge">Mechanical Design</span>
     <span class="badge">Team Leadership</span>
   </div>
 </section>
 
 <section id="contact">
   <h2 class="section-title">Contact</h2>
+
   <div class="card">
     <p>Email: <a style="color:#93c5fd" href="mailto:gtarve2@lsu.edu">gtarve2@lsu.edu</a></p>
     <p>Resume: <a style="color:#93c5fd" href="Resume.pdf" target="_blank">View PDF</a></p>
@@ -232,7 +317,7 @@ footer{
 </section>
 
 <footer>
-  © 2026 Gavin Tarver • Built for aerospace, robotics, and engineering opportunities.
+  © 2026 Gavin Tarver • Mechanical Engineering • Aerospace • Robotics
 </footer>
 
 </body>
